@@ -1,11 +1,10 @@
-FROM ubuntu:18.04
+FROM ubuntu:16.04
 ENV PYTHONUNBUFFERED 1
 
 RUN \
     apt-get -y update && \
     apt-get install -y \
     gettext \
-    wget \
     git \
     openssh-client \
     curl \
@@ -22,13 +21,5 @@ RUN \
     libffi-dev \
     shared-mime-info \
     python3-dev \
-    libpq-dev \
     && apt-get upgrade -y \
     && apt-get clean
-
-RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
-
-RUN \
-    apt-get -y update && \
-    apt-get install -y nodejs && \
-    apt-get clean

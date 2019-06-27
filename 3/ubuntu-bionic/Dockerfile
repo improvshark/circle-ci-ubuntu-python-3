@@ -1,0 +1,28 @@
+FROM ubuntu:18.04
+ENV PYTHONUNBUFFERED 1
+
+RUN \
+    apt-get -y update && \
+    apt-get install -y \
+    gettext \
+    wget \
+    git \
+    openssh-client \
+    curl \
+    build-essential \
+    python3 \
+    python3-pip \
+    python3-setuptools \
+    python3-wheel \
+    python3-cffi \
+    python3-venv \
+    libcairo2 \
+    libpango-1.0-0 \
+    libpangocairo-1.0-0 \
+    libgdk-pixbuf2.0-0 \
+    libffi-dev \
+    shared-mime-info \
+    python3-dev \
+    libpq-dev \
+    && apt-get upgrade -y \
+    && apt-get clean
